@@ -1,0 +1,2 @@
+echo "Command use: nslookup slash16.org 8.8.8.8" "\n"
+nslookup slash16.org 8.8.8.8

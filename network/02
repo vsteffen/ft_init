@@ -1,0 +1,2 @@
+echo "Command use: ifconfig en0 | grep 'inet ' | awk '{print $2}'" "\n"
+ifconfig en0 | grep "inet " | awk '{print $2}'

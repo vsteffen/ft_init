@@ -1,0 +1,2 @@
+echo "Command use: nslookup slash16.org | grep -m1 '' | awk '{print \$2}'" "\n"
+nslookup slash16.org | grep -m1 '' | awk '{print $2}'

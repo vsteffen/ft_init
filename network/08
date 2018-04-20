@@ -1,0 +1,4 @@
+They are multiple ways to find the hosting provider :
+- you can use traceroute to see the last node before reaching the desire domain
+- use WHOIS and see if name server are provided
+- use a dedicated service like https://www.whoishostingthis.com

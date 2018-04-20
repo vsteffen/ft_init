@@ -1,0 +1,2 @@
+echo "Command use: ifconfig en1 | grep ether | awk '{print $2}'" "\n"
+ifconfig en1 | grep "ether " | awk '{print $2}'
