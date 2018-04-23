@@ -1,1 +1,2 @@
-echo "Command use: " "\n"
+echo "Command use: traceroute slash16.org""\n"
+traceroute slash16.org

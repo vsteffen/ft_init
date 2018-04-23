@@ -1,1 +1,1 @@
-echo "Command use: " "\n"
+The file containing the local entries for DNS is the "hosts" file located in etc folder (/etc/hosts)

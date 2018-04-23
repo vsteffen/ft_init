@@ -1,1 +1,2 @@
-echo "Command use: " "\n"
+We edit the file host located in /etc/hosts and we add the following line:
+46.19.122.85 intra.42.fr

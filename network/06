@@ -1,2 +1,2 @@
-We can find the ip address of the DNS Server used by our system by looking the content located in the following file :
+We can find the ip address of the DNS Server used by our system by looking at the content located in the following file :
 /etc/resolv.conf
