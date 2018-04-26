@@ -1,0 +1,2 @@
+echo 'Command use: ps aux' "\n"
+ps aux

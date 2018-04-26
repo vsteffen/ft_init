@@ -1,0 +1,2 @@
+echo 'Command use: df -hT' "\n"
+df -hT

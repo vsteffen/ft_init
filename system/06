@@ -1,0 +1,2 @@
+echo 'Command use: service ssh restart' "\n"
+service ssh restart

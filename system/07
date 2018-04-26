@@ -1,0 +1,2 @@
+echo 'Command use: pidof sshd' "\n"
+pidof sshd

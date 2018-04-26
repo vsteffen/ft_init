@@ -1,0 +1,2 @@
+echo 'Command use: kill -9 [pid] OR pkill [command]' "\n"
+pkill tail

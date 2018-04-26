@@ -1,0 +1,4 @@
+echo 'Command use: hostname' "\n"
+hostname
+hostname awesomeHostname
+hostname

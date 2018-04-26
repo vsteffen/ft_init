@@ -1,0 +1,4 @@
+We can see the version installed of debian in the followings files:
+- /etc/debian_version
+- /etc/os-release
+- /etc/issue

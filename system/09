@@ -1,0 +1,2 @@
+echo 'Command use: w' "\n"
+w
