@@ -1,0 +1,2 @@
+echo 'Command use: iptables -I INPUT -p tcp -s 0.0.0.0/0 --dport 22 -j DROP' "\n"
+iptables -I INPUT -p tcp -s 0.0.0.0/0 --dport 22 -j DROP
