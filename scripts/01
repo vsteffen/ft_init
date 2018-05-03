@@ -1,0 +1,12 @@
+#!/bin/bash
+
+while read line; do
+	echo -n $(echo -n "$line" | awk -F ':' '{print $1}')':'
+	echo -n $(echo "$line" | awk -F ':' '{print $3}')':'
+	echo $(echo "$line" | awk -F ':' '{print $6}')
+done < /etc/passwd
+
+# while IFS=: read -r f1 f2 f3 f4 f5 f6 f7
+# do
+#  echo "$f1:$f3:$f6"
+# done < /etc/passwd
