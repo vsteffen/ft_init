@@ -1,0 +1,16 @@
+#!/bin/bash
+
+if [ $# -eq 0 ]
+then
+	ls -lSh .
+elif [ $# -eq 1 ]
+then
+	ls -lSh "$@"
+else
+	for var in "$@"
+	do
+		echo "$var"':'
+		ls -lSh "$var"
+		echo
+	done
+fi
