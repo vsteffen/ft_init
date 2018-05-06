@@ -1,2 +1,3 @@
-echo "Command use: ifconfig en0 | grep 'inet ' | awk '{print $2}'" "\n"
-ifconfig en0 | grep "inet " | awk '{print $2}'
+echo "Command use: ifconfig en0" "\n"
+ifconfig en0
+# Subject change ? --> ifconfig en0 | grep "inet " | awk '{print $2}'
