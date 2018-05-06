@@ -1,17 +1,27 @@
 #!/bin/bash
 
-cat > $(pwd)/04.sh << EOF
+cat > $(pwd)/04.sh << "EOF"
 #!/bin/bash
 
-LASTMOD=$(stat /etc/crontab -c '%y' | awk '{print $1}')
-TODAY=$(date '+%Y-%m-%d')
+LASTMD5=lol
 
-if [ "$TODAY" == "$LASTMOD" ]
+if [ "$LASTMD5" == `md5sum /etc/crontab | awk '{print $1}'` ]
 then
 	echo "This email was sent to you to notify that the crontab file was changed today on "$HOSTNAME | mail -s "["$HOSTNAME"] Crontab modified" vsteffen
+else
+	echo "No changed for file /etc/crontab on "$HOSTNAME | mail -s "["$HOSTNAME"] Crontab not midfied" vsteffen
 fi
 
+NEWMD5=`md5sum /etc/crontab | awk '{print $1}'`
+sed -i -- "s/LASTMD5.*/LASTMD5=$NEWMD5/g" pouet
 EOF
+
+PATHSCRIPT=$(pwd)/04.sh
+NEWMD5=`md5sum /etc/crontab | awk '{print $1}'`
+
+sed -i -- "s/LASTMD5=lol/LASTMD5=$NEWMD5/g" $PATHSCRIPT
+
+# sed -i -- s~pouet~$PATHSCRIPT~g $(pwd)/04.sh
 
 chmod +x $(pwd)/04.sh
 

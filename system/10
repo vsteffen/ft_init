@@ -1,2 +1,2 @@
-echo 'Command use: fdisk -l' "\n"
+echo -e 'Command use: fdisk -l' "\n"
 fdisk -l

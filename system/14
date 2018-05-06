@@ -1,2 +1,2 @@
-echo 'Command use: nohup tail -f /var/log/syslog > /dev/null 2>&1 &' "\n"
+echo -e 'Command use: nohup tail -f /var/log/syslog > /dev/null 2>&1 &' "\n"
 nohup tail -f /var/log/syslog > /dev/null 2>&1 &

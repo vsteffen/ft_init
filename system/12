@@ -1,2 +1,2 @@
-echo 'Command use: du -hd1 /var' "\n"
+echo -e 'Command use: du -hd1 /var' "\n"
 du -hd1 /var

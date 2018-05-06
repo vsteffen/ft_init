@@ -1,2 +1,2 @@
-echo 'Command use: ps aux' "\n"
+echo -e 'Command use: ps aux' "\n"
 ps aux

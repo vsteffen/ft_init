@@ -1,2 +1,2 @@
-echo 'Command use: pidof sshd' "\n"
+echo -e 'Command use: pidof sshd' "\n"
 pidof sshd

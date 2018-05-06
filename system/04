@@ -1,2 +1,2 @@
-echo 'Command use: uptime' "\n"
-uptime
+echo -e 'Command use: uptime -p' "\n"
+uptime -p

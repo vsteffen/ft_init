@@ -1,2 +1,2 @@
-echo 'Command use: iptables -I INPUT -p tcp -s 10.0.0.0/8 --dport 22 -j ACCEPT' "\n"
+echo -e 'Command use: iptables -I INPUT -p tcp -s 10.0.0.0/8 --dport 22 -j ACCEPT' "\n"
 iptables -I INPUT -p tcp -s 10.0.0.0/8 --dport 22 -j ACCEPT

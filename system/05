@@ -1,2 +1,2 @@
-echo 'Command use: service ssh status' "\n"
+echo -e 'Command use: service ssh status' "\n"
 service ssh status

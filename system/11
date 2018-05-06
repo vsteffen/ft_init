@@ -1,2 +1,2 @@
-echo 'Command use: df -hT' "\n"
+echo -e 'Command use: df -hT' "\n"
 df -hT

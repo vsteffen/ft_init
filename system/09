@@ -1,2 +1,2 @@
-echo 'Command use: w' "\n"
+echo -e 'Command use: w' "\n"
 w
