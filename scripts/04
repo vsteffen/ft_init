@@ -1,6 +1,6 @@
 #!/bin/bash
 
-sudo cat > $(pwd)/04.sh << EOF
+cat > $(pwd)/04.sh << EOF
 #!/bin/bash
 
 LASTMOD=$(stat /etc/crontab -c '%y' | awk '{print $1}')
@@ -13,7 +13,7 @@ fi
 
 EOF
 
-sudo chmod +x $(pwd)/04.sh
+chmod +x $(pwd)/04.sh
 
 crontab -l | { cat; echo '* * * * * '$(pwd)'/04.sh'; } | crontab -
 
