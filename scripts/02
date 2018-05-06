@@ -1,6 +1,5 @@
 #!/bin/bash
 
 crontab -l | { cat; echo '0 4 * * 0 ( apt-get update -y && apt-get upgrade -y ; echo )  >> /var/log/update_script.log'; } | crontab -
-crontab -l | { cat; echo '* * * * * ( apt-get update -y && apt-get upgrade -y ; echo )  >> /var/log/update_script.log'; } | crontab -
 
 # Or crontab [-u] -e and add planified task

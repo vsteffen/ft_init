@@ -1,3 +1,20 @@
 #!/bin/bash
 
-crontab -l | { cat; echo '0 0 * * * $(pwd)/04'; } | crontab -
+sudo cat > $(pwd)/04.sh << EOF
+#!/bin/bash
+
+LASTMOD=$(stat /etc/crontab -c '%y' | awk '{print $1}')
+TODAY=$(date '+%Y-%m-%d')
+
+if [ "$TODAY" == "$LASTMOD" ]
+then
+	echo "This email was sent to you to notify that the crontab file was changed today on "$HOSTNAME | mail -s "["$HOSTNAME"] Crontab modified" vsteffen
+fi
+
+EOF
+
+sudo chmod +x $(pwd)/04.sh
+
+crontab -l | { cat; echo '* * * * * '$(pwd)'/04.sh'; } | crontab -
+
+# https://unix.stackexchange.com/questions/361504/is-it-possible-to-send-emails-locally-to-user-root
