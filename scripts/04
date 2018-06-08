@@ -5,26 +5,21 @@ cat > $(pwd)/04.sh << "EOF"
 
 LASTMD5=lol
 
-if [ "$LASTMD5" == `md5sum /etc/crontab | awk '{print $1}'` ]
+if [ "$LASTMD5" != `md5sum /etc/crontab | awk '{print $1}'` ]
 then
-	echo "This email was sent to you to notify that the crontab file was changed today on "$HOSTNAME | mail -s "["$HOSTNAME"] Crontab modified" vsteffen
-else
-	echo "No changed for file /etc/crontab on "$HOSTNAME | mail -s "["$HOSTNAME"] Crontab not midfied" vsteffen
+	echo "This email was sent to you to notify that the crontab file was changed today on "$HOSTNAME | mail -s "["$HOSTNAME"] Crontab modified" root
 fi
 
 NEWMD5=`md5sum /etc/crontab | awk '{print $1}'`
-sed -i -- "s/LASTMD5.*/LASTMD5=$NEWMD5/g" pouet
+sed -i -- "s/LASTMD5=$LASTMD5/LASTMD5=$NEWMD5/g" pouet
 EOF
 
 PATHSCRIPT=$(pwd)/04.sh
 NEWMD5=`md5sum /etc/crontab | awk '{print $1}'`
 
 sed -i -- "s/LASTMD5=lol/LASTMD5=$NEWMD5/g" $PATHSCRIPT
-
-# sed -i -- s~pouet~$PATHSCRIPT~g $(pwd)/04.sh
+sed -i "s~pouet~$PATHSCRIPT~g" $PATHSCRIPT
 
 chmod +x $(pwd)/04.sh
 
-crontab -l | { cat; echo '* * * * * '$(pwd)'/04.sh'; } | crontab -
-
-# https://unix.stackexchange.com/questions/361504/is-it-possible-to-send-emails-locally-to-user-root
+crontab -l | { cat; echo '0 0 * * * '$(pwd)'/04.sh'; } | crontab -
